@@ -6,7 +6,7 @@
  | 更改记录：
  |			 时间		版本		更改
  */
-namespace LoongEgg.LoongLogger
+namespace LoongEgg.LoongLog
 {
 
     public static class StringExtensions

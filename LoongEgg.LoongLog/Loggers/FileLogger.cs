@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 
-namespace LoongEgg.LoongLogger
+namespace LoongEgg.LoongLog
 {
     /// <summary>
     /// File版的<see cref="LoggerBase"/>
     /// </summary>
-    public class FileLogger : LoggerBase
+    internal class FileLogger : LoggerBase
     { 
 
         /*-------------------------------------- Properties -------------------------------------*/

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace LoongEgg.LoongLogger
+namespace LoongEgg.LoongLog
 {
-    public class ConsoleLogger : LoggerBase
+    internal class ConsoleLogger : LoggerBase
     {
         [Obsolete("不允许在外部通过构造器生成实例", true)]
         public ConsoleLogger(LoggerLevel level) : base(level) { }

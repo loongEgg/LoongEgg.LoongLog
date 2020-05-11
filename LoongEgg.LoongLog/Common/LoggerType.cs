@@ -1,25 +1,25 @@
 ﻿using System;
 
-namespace LoongEgg.LoongLogger
+namespace LoongEgg.LoongLog
 {
     /// <summary>
     /// 要开启的logger类型
     /// </summary>
     [Flags]
-    public enum LoggerType
+    public enum Loggers
     {
         /// <summary>
-        /// 仅开启调试输出logger
+        /// 仅开启调试输出日志, Debug logger only
         /// </summary>
         DebugLogger = 0x1,
 
         /// <summary>
-        /// 仅开启控制台logger
+        /// 仅开启控制台日志， Console logger only
         /// </summary>
         ConsoleLogger = 0x2,
 
         /// <summary>
-        /// 仅开启文件logger
+        /// 仅开启文件文件日志, File logger only
         /// </summary>
         FileLogger = 0x4,
 

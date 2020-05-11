@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace LoongEgg.LoongLogger
+namespace LoongEgg.LoongLog
 {
     /// <summary>
     /// 控制台版的logger
     /// </summary>
-    public class DebugLogger : LoggerBase
+    internal class DebugLogger : LoggerBase
     {
         [Obsolete("不允许在外部通过构造器生成实例", true)]
         public DebugLogger(LoggerLevel level) : base(level) { } 

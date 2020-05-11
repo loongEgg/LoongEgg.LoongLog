@@ -1,4 +1,4 @@
-﻿namespace LoongEgg.LoongLogger
+﻿namespace LoongEgg.LoongLog
 {
     /// <summary>
     /// Logger的级别

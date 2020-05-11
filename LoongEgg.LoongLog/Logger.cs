@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace LoongEgg.LoongLogger
+namespace LoongEgg.LoongLog
 {
     /// <summary>
     /// logger调度器
@@ -23,32 +23,26 @@ namespace LoongEgg.LoongLogger
         ///     <param name="type">待激活的各种logger标志</param>
         ///     <param name="level">logger的级别, 默认为<see cref="LoggerLevel.Dbug"/></param>
         ///     <param name="fileName">[建议不要设置]fileLogger的文件名称</param>
-        public static void Enable(LoggerType type, LoggerLevel level = LoggerLevel.Dbug, string fileName = null) {
-            if (type.HasFlag(LoggerType.ConsoleLogger))
+        public static void Enable(Loggers type, LoggerLevel level = LoggerLevel.Dbug, string fileName = null) {
+            if (type.HasFlag(Loggers.ConsoleLogger))
                 LoggerBase.EnsureCreat<ConsoleLogger>(level);
 
-            if (type.HasFlag(LoggerType.DebugLogger))
+            if (type.HasFlag(Loggers.DebugLogger))
                 LoggerBase.EnsureCreat<DebugLogger>(level);
 
-            if (type.HasFlag(LoggerType.FileLogger)) {
+            if (type.HasFlag(Loggers.FileLogger)) {
                 LoggerBase.EnsureCreat<FileLogger>(level);
                 if (fileName.IsNotNullOrEmptyOrSpace()) FileLogger.FileName = fileName;
                 WriteInformation("Logger File created... Check [ROOT_OF_YOUR_APP]/log/");
             }
 
-            if(LoggerBase.Instances.Any()) {
-                WriteDebug("A debug message for fun");
-                WriteInformation("A information message for fun");
-                WriteWarning("A warning message for fun");
-                WriteError("A error message for fun");
-            }
         }
 
         /// <summary>
         /// 激活所有logger
         /// </summary>
         /// <param name="level"><see cref="LoggerLevel"/></param> 
-        public static void EnableAll(LoggerLevel level = LoggerLevel.Dbug) => Enable(LoggerType.All, level);
+        public static void EnableAll(LoggerLevel level = LoggerLevel.Dbug) => Enable(Loggers.All, level);
 
         public static void Disable() {
             if (LoggerBase.Instances.Any())

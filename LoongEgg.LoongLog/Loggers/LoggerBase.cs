@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace LoongEgg.LoongLogger
+namespace LoongEgg.LoongLog
 {
     /// <summary>
     /// logger的基类
