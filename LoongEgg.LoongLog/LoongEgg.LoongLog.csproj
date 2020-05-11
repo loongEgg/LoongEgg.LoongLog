@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Copyright (c) 2020 loongEgg</Copyright>
+    <PackageLicenseUrl>https://github.com/loongEgg/LoongEgg.LoongLog/blob/master/LICENSE</PackageLicenseUrl>
+    <Description>一个简单实用的Logger工具，欢迎体验！
+A logger helper for .NET C# base on .NET Standard 2.0, contains debug logger, console logger, and file logger.
+Lowest support: NET Framework 4.6.1，.NET CORE 2.0...
+Enjoy it!</Description>
+    <PackageProjectUrl>https://github.com/loongEgg/LoongEgg.LoongLog/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/loongEgg/LoongEgg.LoongLog/</RepositoryUrl>
+    <PackageReleaseNotes>First publish!</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
