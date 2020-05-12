@@ -19,5 +19,5 @@ Enjoy it!
 
 ## How To
 Look into the demos or:
-https://github.com/loongEgg/LoongEgg.LoongLog/blob/master/howto.md
+https://github.com/loongEgg/LoongEgg.LoongLog/blob/master/HowTo.md
 
