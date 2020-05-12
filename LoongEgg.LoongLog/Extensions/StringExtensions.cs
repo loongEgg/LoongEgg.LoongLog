@@ -9,7 +9,7 @@
 namespace LoongEgg.LoongLog
 {
 
-    public static class StringExtensions
+    internal static class StringExtensions
     {
         public static bool IsNotNullOrEmptyOrSpace(this string self) {
             return !string.IsNullOrEmpty(self) && !string.IsNullOrWhiteSpace(self);
