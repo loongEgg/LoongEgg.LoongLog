@@ -7,11 +7,15 @@
 ```c#
 Logger.EnableAll();
 ```
+## 仅激活调试输出(Enable debug output only)
+```c#
+Logger.Enable(Loggers.DebugLogger);
+```
 ## 打印一个新的日志消息(Write a new log message)
 只要在入口激活了，在别的类中就可以正常调用，Logger是一个静态工具类
 ```c#
-Logger.WriteDebug("a debugmessage"); // 调试消息
-Logger.WriteInformation("aninformation message"); // 一般消息
+Logger.WriteDebug("a debug message"); // 调试消息
+Logger.WriteInformation("an information message"); // 一般消息
 Logger.WriteWarning("a warning message"); // 警告
 Logger.WriteError("a error message"); // 错误
 ```
