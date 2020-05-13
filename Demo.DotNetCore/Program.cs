@@ -1,6 +1,5 @@
 ﻿
 using LoongEgg.LoongLog;
-using System;
 using System.Diagnostics;
 
 namespace Demo.DotNetCore

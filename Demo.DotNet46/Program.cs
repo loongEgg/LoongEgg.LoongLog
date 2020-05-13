@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LoongEgg.LoongLog;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LoongEgg.LoongLog;
 
 namespace Demo.DotNet46
 {
     class Program
     {
         static void Main(string[] args) {
-            // Logger.EnableAll();
+            Logger.EnableAll();
             // DebugLoggerOnly();
             // ConsoleLoggerOnly();
-            FileLoggerOnly();
+            //FileLoggerOnly();
 
             Logger.WriteDebug("a debug message");
             Logger.WriteInformation("an information message");
