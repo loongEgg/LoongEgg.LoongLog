@@ -23,7 +23,11 @@ namespace LoongEgg.LoongLog
         public override void WriteLine(
             string message, 
             MessageType type)
-            => System.Diagnostics.Debug.WriteLine(message);
+        { 
+            if ((int) type < (int) Level)
+                return;
+             System.Diagnostics.Debug.WriteLine(message);
+        }
     }
 
 }

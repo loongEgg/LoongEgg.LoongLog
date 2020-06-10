@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.DotNet46", "Demo.DotNe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoongEgg.LoongLog.FX45", "LoongEgg.LoongLog.FX45\LoongEgg.LoongLog.FX45.csproj", "{3A4CEF56-8F64-45EE-9467-89DDD32BA332}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.DotNet45", "Demo.DotNet45\Demo.DotNet45.csproj", "{4EAE9138-7213-4DF5-8053-78DDF6999CE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{3A4CEF56-8F64-45EE-9467-89DDD32BA332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A4CEF56-8F64-45EE-9467-89DDD32BA332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A4CEF56-8F64-45EE-9467-89DDD32BA332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EAE9138-7213-4DF5-8053-78DDF6999CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EAE9138-7213-4DF5-8053-78DDF6999CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EAE9138-7213-4DF5-8053-78DDF6999CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EAE9138-7213-4DF5-8053-78DDF6999CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B4DE589C-DE04-4F47-A1ED-D6BC4B9DA8D5} = {DEAA447A-322B-40B3-A516-453A396508CA}
 		{35A02265-215B-40DF-8B2F-D08870B32710} = {DEAA447A-322B-40B3-A516-453A396508CA}
+		{4EAE9138-7213-4DF5-8053-78DDF6999CE2} = {DEAA447A-322B-40B3-A516-453A396508CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B8B10CB-7D40-44B1-9CE2-C2C8216FE45A}

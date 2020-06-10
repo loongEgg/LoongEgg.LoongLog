@@ -43,7 +43,17 @@ namespace LoongEgg.LoongLog
         /// </summary>
         /// <param name="level"><see cref="LoggerLevel"/></param> 
         public static void EnableAll(LoggerLevel level = LoggerLevel.Dbug) => Enable(Loggers.All, level);
-
+         
+        /// <summary>
+        /// 激活Debug时的Logger
+        /// </summary>
+        /// <param name="level">记录的最低级别</param>
+        public static void EnableDebugLogger(LoggerLevel level = LoggerLevel.Dbug)
+            => Enable(Loggers.DebugLogger, level);
+         
+        /// <summary>
+        /// 清除所有Logger
+        /// </summary>
         public static void Disable() {
             if (LoggerBase.Instances.Any())
                 foreach (LoggerBase log in LoggerBase.Instances.Values)

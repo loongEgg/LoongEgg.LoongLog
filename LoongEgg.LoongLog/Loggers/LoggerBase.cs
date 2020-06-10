@@ -50,6 +50,9 @@ namespace LoongEgg.LoongLog
             return Instances[typeName];
         }
 
+        /// <summary>
+        /// 清除所有Logger工具
+        /// </summary>
         public static void ClearAll() => Instances.Clear();
 
         /// <summary>

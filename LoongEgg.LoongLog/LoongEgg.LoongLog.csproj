@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <Copyright>Copyright (c) 2020 loongEgg</Copyright>
     <PackageLicenseUrl>https://github.com/loongEgg/LoongEgg.LoongLog/blob/master/LICENSE</PackageLicenseUrl>
     <Description>一个简单实用的Logger工具，欢迎体验！
@@ -15,6 +15,10 @@ Enjoy it!</Description>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile>E:\Published\LoongEgg.LoongLog\LoongEgg.LoongLog\LoongEgg.LoongLog.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

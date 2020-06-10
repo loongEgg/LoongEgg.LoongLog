@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace LoongEgg.LoongLog.FX45
@@ -19,6 +20,7 @@ namespace LoongEgg.LoongLog.FX45
     {
         private readonly static object _Lock = new object();
 
+        [Obsolete("这个Nuget工具不再更新，使用LoongEgg.LoongLog（V2.0.0已更新支持.Net45和.NetStandard2.0兼容的跨平台和框架开发）即可")]
         /// <summary>
         /// 激活各种logger, 可以使用'|'位或运算
         /// </summary>
@@ -42,6 +44,7 @@ namespace LoongEgg.LoongLog.FX45
 
         }
 
+        [Obsolete("这个Nuget工具不再更新，使用LoongEgg.LoongLog（V2.0.0已更新支持.Net45和.NetStandard2.0兼容的跨平台和框架开发）即可")] 
         /// <summary>
         /// 激活Debug时的Logger
         /// </summary>
