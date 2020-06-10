@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LoongEgg.LoongLog</name>
+    </assembly>
+    <members>
+        <member name="T:LoongEgg.LoongLog.LoggerLevel">
+            <summary>
+            Logger的级别
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.LoggerLevel.Dbug">
+            <summary>
+            显示所有级别消息
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.LoggerLevel.Info">
+            <summary>
+            显示一般消息、警告、故障
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.LoggerLevel.Warn">
+            <summary>
+            显示警告、故障
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.LoggerLevel.Erro">
+            <summary>
+            仅显示故障
+            </summary>
+        </member>
+        <member name="T:LoongEgg.LoongLog.Loggers">
+            <summary>
+            要开启的logger类型
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.Loggers.DebugLogger">
+            <summary>
+            仅开启调试输出日志, Debug logger only
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.Loggers.ConsoleLogger">
+            <summary>
+            仅开启控制台日志， Console logger only
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.Loggers.FileLogger">
+            <summary>
+            仅开启文件文件日志, File logger only
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.Loggers.All">
+            <summary>
+            开启所有logger
+            </summary>
+        </member>
+        <member name="T:LoongEgg.LoongLog.MessageType">
+            <summary>
+            新插入的消息类型
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.MessageType.Dbug">
+            <summary>
+            调试信息, Debug Message
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.MessageType.Info">
+            <summary>
+            一般信息, Information Message
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.MessageType.Warn">
+            <summary>
+            警告信息, Warning Message
+            </summary>
+        </member>
+        <member name="F:LoongEgg.LoongLog.MessageType.Erro">
+            <summary>
+            故障信息, Error Message
+            </summary>
+        </member>
+        <member name="T:LoongEgg.LoongLog.Logger">
+            <summary>
+            logger调度器
+            </summary> 
+            <example>
+                Logger.EnableAll();
+                Logger.Debug("A Debug message");
+                Logger.Info("A Information message");
+                Logger.Warn("A Warning message");
+                Logger.Error("A debug message");
+            </example>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.Enable(LoongEgg.LoongLog.Loggers,LoongEgg.LoongLog.LoggerLevel,System.String)">
+            <summary>
+            激活各种logger, 可以使用'|'位或运算
+            </summary>
+                <param name="type">待激活的各种logger标志</param>
+                <param name="level">logger的级别, 默认为<see cref="F:LoongEgg.LoongLog.LoggerLevel.Dbug"/></param>
+                <param name="fileName">[建议不要设置]fileLogger的文件名称</param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.EnableAll(LoongEgg.LoongLog.LoggerLevel)">
+            <summary>
+            激活所有logger
+            </summary>
+            <param name="level"><see cref="T:LoongEgg.LoongLog.LoggerLevel"/></param> 
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.EnableDebugLogger(LoongEgg.LoongLog.LoggerLevel)">
+            <summary>
+            激活Debug时的Logger
+            </summary>
+            <param name="level">记录的最低级别</param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.Disable">
+            <summary>
+            清除所有Logger
+            </summary>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.Debug(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            打印一条<see cref="F:LoongEgg.LoongLog.MessageType.Dbug"/>
+            </summary>
+            <param name="message">消息的具体内容</param> 
+            <param name="callerPath">调用的方法所在文件</param>
+            <param name="callerLine">调用代码所在行</param>
+            <param name="callerMethod">调用方法的名字</param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.Error(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            打印一条<see cref="F:LoongEgg.LoongLog.MessageType.Erro"/>
+            </summary>
+            <param name="message">消息的具体内容</param> 
+            <param name="callerPath">调用的方法所在文件</param>
+            <param name="callerLine">调用代码所在行</param>
+            <param name="callerMethod">调用方法的名字</param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.Info(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            打印一条<see cref="F:LoongEgg.LoongLog.MessageType.Info"/>
+            </summary>
+            <param name="message">消息的具体内容</param> 
+            <param name="callerPath">调用的方法所在文件</param>
+            <param name="callerLine">调用代码所在行</param>
+            <param name="callerMethod">调用方法的名字</param> 
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.Warn(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            打印一条<see cref="F:LoongEgg.LoongLog.MessageType.Warn"/>
+            </summary>
+            <param name="message">消息的具体内容</param> 
+            <param name="callerPath">调用的方法所在文件</param>
+            <param name="callerLine">调用代码所在行</param>
+            <param name="callerMethod">调用方法的名字</param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.WriteLine(System.String)">
+            <summary>
+            简单打印一条消息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.WriteLine(System.String,LoongEgg.LoongLog.MessageType,System.String,System.Int32,System.String)">
+            <summary>
+            打印一条详细的消息
+            </summary>
+            <param name="message">消息的具体内容</param>
+            <param name="type">消息类型</param>
+            <param name="callerPath">调用的方法所在文件</param>
+            <param name="callerLine">调用代码所在行</param>
+            <param name="callerMethod">调用方法的名字</param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.ConsoleLogger.WriteLine(System.String)">
+            <summary>
+            <see cref="M:LoongEgg.LoongLog.LoggerBase.WriteLine(System.String)"/>
+            </summary> 
+        </member>
+        <member name="M:LoongEgg.LoongLog.ConsoleLogger.WriteLine(System.String,LoongEgg.LoongLog.MessageType)">
+            <summary>
+            <see cref="M:LoongEgg.LoongLog.LoggerBase.WriteLine(System.String,LoongEgg.LoongLog.MessageType)"/>
+            </summary> 
+        </member>
+        <member name="T:LoongEgg.LoongLog.DebugLogger">
+            <summary>
+            控制台版的logger
+            </summary>
+        </member>
+        <member name="M:LoongEgg.LoongLog.DebugLogger.WriteLine(System.String)">
+            <summary>
+            <see cref="M:LoongEgg.LoongLog.LoggerBase.WriteLine(System.String)"/>
+            </summary> 
+        </member>
+        <member name="M:LoongEgg.LoongLog.DebugLogger.WriteLine(System.String,LoongEgg.LoongLog.MessageType)">
+            <summary>
+            <see cref="M:LoongEgg.LoongLog.LoggerBase.WriteLine(System.String,LoongEgg.LoongLog.MessageType)"/>
+            </summary> 
+        </member>
+        <member name="T:LoongEgg.LoongLog.FileLogger">
+            <summary>
+            File版的<see cref="T:LoongEgg.LoongLog.LoggerBase"/>
+            </summary>
+        </member>
+        <member name="M:LoongEgg.LoongLog.FileLogger.#ctor(LoongEgg.LoongLog.LoggerLevel,System.String)">
+            <summary>
+            生成一个FileLogger的实例,不建议指定完整的路径和名字,留为Null
+            </summary>
+            <param name="level"></param>
+            <param name="fileName"></param>        
+        </member>
+        <member name="M:LoongEgg.LoongLog.FileLogger.#ctor(LoongEgg.LoongLog.LoggerLevel)">
+            <summary>
+            生成一个FileLogger的实例
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="T:LoongEgg.LoongLog.LoggerBase">
+            <summary>
+            logger的基类
+            </summary>
+        </member>
+        <member name="P:LoongEgg.LoongLog.LoggerBase.Instances">
+            <summary>
+            所有的<see cref="T:LoongEgg.LoongLog.LoggerBase"/>的派生类实例
+            </summary>
+        </member>
+        <member name="P:LoongEgg.LoongLog.LoggerBase.Level">
+            <summary>
+            logger记录器的最低记录级别
+            </summary>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.#ctor(LoongEgg.LoongLog.LoggerLevel)">
+            <summary>
+            构造器
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.EnsureCreat``1(LoongEgg.LoongLog.LoggerLevel)">
+            <summary>
+            创建指定的Logger类型的单例
+            </summary>
+            <typeparam name="T">logger的类型</typeparam>
+            <param name="level">logger的级别</param>
+            <returns></returns>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.ClearAll">
+            <summary>
+            清除所有Logger工具
+            </summary>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.ClearLogger``1">
+            <summary>
+            销毁指定类型的Logger
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.FormatMessage(System.String,LoongEgg.LoongLog.MessageType,System.String,System.Int32,System.String)">
+            <summary>
+            将logger消息合并为一个字符串
+            </summary>
+            <param name="message"></param>
+            <param name="type"></param>
+            <param name="callerPath"></param>
+            <param name="callerLine"></param>
+            <param name="callerMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.WriteLine(System.String)">
+            <summary>
+            简单打印一条消息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.WriteLine(System.String,LoongEgg.LoongLog.MessageType)">
+            <summary>
+            打印一条详细的消息
+            </summary>
+            <param name="message">消息的具体内容</param>
+            <param name="type">消息类型</param>
+        </member>
+    </members>
+</doc>

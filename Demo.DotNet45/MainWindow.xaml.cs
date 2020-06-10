@@ -1,4 +1,4 @@
-﻿using LoongEgg.LoongLog.FX45;
+﻿using LoongEgg.LoongLog; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +25,7 @@ namespace Demo.DotNet45
         {
             InitializeComponent();
             //Logger.EnableDebugLogger();
-            Logger.EnableAll(LoggerLevel.Warn);
+            Logger.EnableAll();
             Logger.Debug("a debug");
             Logger.Debug("a Debug");
             Logger.Info("a Info");

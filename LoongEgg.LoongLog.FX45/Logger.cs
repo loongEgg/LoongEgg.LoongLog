@@ -20,13 +20,13 @@ namespace LoongEgg.LoongLog.FX45
     {
         private readonly static object _Lock = new object();
 
-        [Obsolete("这个Nuget工具不再更新，使用LoongEgg.LoongLog（V2.0.0已更新支持.Net45和.NetStandard2.0兼容的跨平台和框架开发）即可")]
         /// <summary>
         /// 激活各种logger, 可以使用'|'位或运算
         /// </summary>
         ///     <param name="type">待激活的各种logger标志</param>
         ///     <param name="level">logger的级别, 默认为<see cref="LoggerLevel.Dbug"/></param>
         ///     <param name="fileName">[建议不要设置]fileLogger的文件名称</param>
+        [Obsolete("这个Nuget工具不再更新，使用LoongEgg.LoongLog（V2.0.0已更新支持.Net45和.NetStandard2.0兼容的跨平台和框架开发）即可")]
         public static void Enable(Loggers type, LoggerLevel level = LoggerLevel.Dbug, string fileName = null)
         {
             if (type.HasFlag(Loggers.ConsoleLogger))
@@ -44,11 +44,11 @@ namespace LoongEgg.LoongLog.FX45
 
         }
 
-        [Obsolete("这个Nuget工具不再更新，使用LoongEgg.LoongLog（V2.0.0已更新支持.Net45和.NetStandard2.0兼容的跨平台和框架开发）即可")] 
         /// <summary>
         /// 激活Debug时的Logger
         /// </summary>
         /// <param name="level">记录的最低级别</param>
+        [Obsolete("这个Nuget工具不再更新，使用LoongEgg.LoongLog（V2.0.0已更新支持.Net45和.NetStandard2.0兼容的跨平台和框架开发）即可")] 
         public static void EnableDebugLogger(LoggerLevel level = LoggerLevel.Dbug)
             => Enable(Loggers.DebugLogger, level);
 

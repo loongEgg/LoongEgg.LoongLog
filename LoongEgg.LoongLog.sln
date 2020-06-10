@@ -5,15 +5,15 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoongEgg.LoongLog", "LoongEgg.LoongLog\LoongEgg.LoongLog.csproj", "{E1039EC9-2AD6-48FC-9206-E9E8A2A3E85A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{DEAA447A-322B-40B3-A516-453A396508CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{DEAA447A-322B-40B3-A516-453A396508CA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.DotNetCore", "Demo.DotNetCore\Demo.DotNetCore.csproj", "{B4DE589C-DE04-4F47-A1ED-D6BC4B9DA8D5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.DotNet46", "Demo.DotNet46\Demo.DotNet46.csproj", "{35A02265-215B-40DF-8B2F-D08870B32710}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoongEgg.LoongLog.FX45", "LoongEgg.LoongLog.FX45\LoongEgg.LoongLog.FX45.csproj", "{3A4CEF56-8F64-45EE-9467-89DDD32BA332}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.DotNet45", "Demo.DotNet45\Demo.DotNet45.csproj", "{4EAE9138-7213-4DF5-8053-78DDF6999CE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LocalNugetTest", "LocalNugetTest", "{DD2D24FB-846E-447B-949B-8D2C5E90DCE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{B4DE589C-DE04-4F47-A1ED-D6BC4B9DA8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4DE589C-DE04-4F47-A1ED-D6BC4B9DA8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4DE589C-DE04-4F47-A1ED-D6BC4B9DA8D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35A02265-215B-40DF-8B2F-D08870B32710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35A02265-215B-40DF-8B2F-D08870B32710}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35A02265-215B-40DF-8B2F-D08870B32710}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35A02265-215B-40DF-8B2F-D08870B32710}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A4CEF56-8F64-45EE-9467-89DDD32BA332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A4CEF56-8F64-45EE-9467-89DDD32BA332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A4CEF56-8F64-45EE-9467-89DDD32BA332}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,7 +43,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B4DE589C-DE04-4F47-A1ED-D6BC4B9DA8D5} = {DEAA447A-322B-40B3-A516-453A396508CA}
-		{35A02265-215B-40DF-8B2F-D08870B32710} = {DEAA447A-322B-40B3-A516-453A396508CA}
 		{4EAE9138-7213-4DF5-8053-78DDF6999CE2} = {DEAA447A-322B-40B3-A516-453A396508CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

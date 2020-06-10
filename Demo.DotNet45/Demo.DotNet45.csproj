@@ -88,6 +88,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,9 +98,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoongEgg.LoongLog.FX45\LoongEgg.LoongLog.FX45.csproj">
-      <Project>{3a4cef56-8f64-45ee-9467-89ddd32ba332}</Project>
-      <Name>LoongEgg.LoongLog.FX45</Name>
+    <ProjectReference Include="..\LoongEgg.LoongLog\LoongEgg.LoongLog.csproj">
+      <Project>{e1039ec9-2ad6-48fc-9206-e9e8a2a3e85a}</Project>
+      <Name>LoongEgg.LoongLog</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

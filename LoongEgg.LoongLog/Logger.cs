@@ -8,10 +8,10 @@ namespace LoongEgg.LoongLog
     /// </summary> 
     /// <example>
     ///     Logger.EnableAll();
-    ///     Logger.WriteDebug("A Debug message");
-    ///     Logger.WriteInformation("A Information message");
-    ///     Logger.WriteWarning("A Warning message");
-    ///     Logger.WriteError("A debug message");
+    ///     Logger.Debug("A Debug message");
+    ///     Logger.Info("A Information message");
+    ///     Logger.Warn("A Warning message");
+    ///     Logger.Error("A debug message");
     /// </example>
     public static class Logger
     {
@@ -33,7 +33,7 @@ namespace LoongEgg.LoongLog
             if (type.HasFlag(Loggers.FileLogger)) {
                 LoggerBase.EnsureCreat<FileLogger>(level);
                 if (fileName.IsNotNullOrEmptyOrSpace()) FileLogger.FileName = fileName;
-                WriteInformation("Logger File created... Check [ROOT_OF_YOUR_APP]/log/");
+                Info("Logger File [Created]... Check [ROOT_OF_YOUR_APP]/log/");
             }
 
         }
@@ -58,7 +58,7 @@ namespace LoongEgg.LoongLog
             if (LoggerBase.Instances.Any())
                 foreach (LoggerBase log in LoggerBase.Instances.Values)
                     if (log is FileLogger)
-                        WriteInformation("Logger File closed... Check [ROOT_OF_YOUR_APP]/log/");
+                        Info("Logger File is [Closed]... Check [ROOT_OF_YOUR_APP]/log/");
             LoggerBase.ClearAll();
         }
 
@@ -69,7 +69,7 @@ namespace LoongEgg.LoongLog
         /// <param name="callerPath">调用的方法所在文件</param>
         /// <param name="callerLine">调用代码所在行</param>
         /// <param name="callerMethod">调用方法的名字</param>
-        public static void WriteDebug(
+        public static void Debug(
             string message,
             [CallerFilePath] string callerPath = null,
             [CallerLineNumber] int callerLine = 0,
@@ -82,7 +82,7 @@ namespace LoongEgg.LoongLog
         /// <param name="callerPath">调用的方法所在文件</param>
         /// <param name="callerLine">调用代码所在行</param>
         /// <param name="callerMethod">调用方法的名字</param>
-        public static void WriteError(
+        public static void Error(
              string message,
             [CallerFilePath] string callerPath = null,
             [CallerLineNumber] int callerLine = 0,
@@ -95,7 +95,7 @@ namespace LoongEgg.LoongLog
         /// <param name="callerPath">调用的方法所在文件</param>
         /// <param name="callerLine">调用代码所在行</param>
         /// <param name="callerMethod">调用方法的名字</param> 
-        public static void WriteInformation(
+        public static void Info(
             string message,
             [CallerFilePath] string callerPath = null,
             [CallerLineNumber] int callerLine = 0,
@@ -108,7 +108,7 @@ namespace LoongEgg.LoongLog
         /// <param name="callerPath">调用的方法所在文件</param>
         /// <param name="callerLine">调用代码所在行</param>
         /// <param name="callerMethod">调用方法的名字</param>
-        public static void WriteWarning(
+        public static void Warn(
             string message,
             [CallerFilePath] string callerPath = null,
             [CallerLineNumber] int callerLine = 0,

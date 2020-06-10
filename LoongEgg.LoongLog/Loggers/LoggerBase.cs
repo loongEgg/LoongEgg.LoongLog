@@ -12,6 +12,9 @@ namespace LoongEgg.LoongLog
     /// </summary>
     public abstract class LoggerBase
     {
+        /// <summary>
+        /// 所有的<see cref="LoggerBase"/>的派生类实例
+        /// </summary>
         public static Dictionary<string, LoggerBase> Instances { get; private set; } = new Dictionary<string, LoggerBase>();
 
         /*-------------------------------------- Properties -------------------------------------*/
