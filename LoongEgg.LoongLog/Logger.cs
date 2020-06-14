@@ -15,6 +15,7 @@ namespace LoongEgg.LoongLog
     /// </example>
     public static class Logger
     {
+        private static bool IsDetailMode = false;
         private readonly static object _Lock = new object();
 
         /// <summary>
@@ -23,14 +24,27 @@ namespace LoongEgg.LoongLog
         ///     <param name="type">待激活的各种logger标志</param>
         ///     <param name="level">logger的级别, 默认为<see cref="LoggerLevel.Dbug"/></param>
         ///     <param name="fileName">[建议不要设置]fileLogger的文件名称</param>
-        public static void Enable(Loggers type, LoggerLevel level = LoggerLevel.Dbug, string fileName = null) {
+        public static void Enable(Loggers type, LoggerLevel level = LoggerLevel.Dbug, string fileName = null)
+            => Enable(type, false, level, fileName);
+
+        /// <summary>
+        /// 激活各种logger, 可以使用'|'位或运算
+        /// </summary>
+        ///     <param name="type">待激活的各种logger标志</param>
+        ///     <param name="level">logger的级别, 默认为<see cref="LoggerLevel.Dbug"/></param>
+        ///     <param name="fileName">[建议不要设置]fileLogger的文件名称</param>
+        ///     <param name="isDetailMode">详细模式？</param>
+        public static void Enable(Loggers type, bool isDetailMode, LoggerLevel level = LoggerLevel.Dbug, string fileName = null)
+        {
+            IsDetailMode = isDetailMode;
             if (type.HasFlag(Loggers.ConsoleLogger))
                 LoggerBase.EnsureCreat<ConsoleLogger>(level);
 
             if (type.HasFlag(Loggers.DebugLogger))
                 LoggerBase.EnsureCreat<DebugLogger>(level);
 
-            if (type.HasFlag(Loggers.FileLogger)) {
+            if (type.HasFlag(Loggers.FileLogger))
+            {
                 LoggerBase.EnsureCreat<FileLogger>(level);
                 if (fileName.IsNotNullOrEmptyOrSpace()) FileLogger.FileName = fileName;
                 Info("Logger File [Created]... Check [ROOT_OF_YOUR_APP]/log/");
@@ -42,19 +56,23 @@ namespace LoongEgg.LoongLog
         /// 激活所有logger
         /// </summary>
         /// <param name="level"><see cref="LoggerLevel"/></param> 
-        public static void EnableAll(LoggerLevel level = LoggerLevel.Dbug) => Enable(Loggers.All, level);
-         
+        /// <param name="isDetailMode">详细模式？</param>
+        public static void EnableAll(LoggerLevel level = LoggerLevel.Dbug, bool isDetailMode = false) 
+            => Enable(Loggers.All, isDetailMode, level);
+
         /// <summary>
         /// 激活Debug时的Logger
         /// </summary>
         /// <param name="level">记录的最低级别</param>
-        public static void EnableDebugLogger(LoggerLevel level = LoggerLevel.Dbug)
-            => Enable(Loggers.DebugLogger, level);
-         
+        /// <param name="isDetailMode">详细模式？</param>
+        public static void EnableDebugLogger(LoggerLevel level = LoggerLevel.Dbug, bool isDetailMode = false)
+            => Enable(Loggers.DebugLogger, isDetailMode, level);
+
         /// <summary>
         /// 清除所有Logger
         /// </summary>
-        public static void Disable() {
+        public static void Disable()
+        {
             if (LoggerBase.Instances.Any())
                 foreach (LoggerBase log in LoggerBase.Instances.Values)
                     if (log is FileLogger)
@@ -118,8 +136,10 @@ namespace LoongEgg.LoongLog
         /// 简单打印一条消息
         /// </summary>
         /// <param name="message"></param>
-        public static void WriteLine(string message) {
-            lock (_Lock) { 
+        public static void WriteLine(string message)
+        {
+            lock (_Lock)
+            {
                 if (LoggerBase.Instances.Any())
                     foreach (LoggerBase log in LoggerBase.Instances.Values)
                         log.WriteLine(message);
@@ -139,12 +159,19 @@ namespace LoongEgg.LoongLog
             MessageType type,
             [CallerFilePath] string callerPath = null,
             [CallerLineNumber] int callerLine = 0,
-            [CallerMemberName] string callerMethod = null) {
+            [CallerMemberName] string callerMethod = null)
+        {
 
-            lock (_Lock) { 
+            lock (_Lock)
+            {
                 if (LoggerBase.Instances.Any())
                     foreach (LoggerBase log in LoggerBase.Instances.Values)
-                        log.WriteLine(LoggerBase.FormatMessage(message, type, callerPath, callerLine, callerMethod), type);
+                    {
+                        if (IsDetailMode)
+                            log.WriteLine(LoggerBase.FormatMessage(message, type, callerPath, callerLine, callerMethod), type);
+                        else
+                            log.WriteLine(LoggerBase.FormatMessage(message, type), type);
+                    }
             }
         }
     }

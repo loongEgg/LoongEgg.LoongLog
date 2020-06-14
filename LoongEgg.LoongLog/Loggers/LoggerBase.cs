@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace LoongEgg.LoongLog
@@ -28,10 +27,11 @@ namespace LoongEgg.LoongLog
         /// 构造器
         /// </summary>
         /// <param name="level"></param>
-        protected LoggerBase(LoggerLevel level) {
+        protected LoggerBase(LoggerLevel level)
+        {
             this.Level = level;
         }
-         
+
         /*------------------------------------ Public Methods -----------------------------------*/
         /// <summary>
         /// 创建指定的Logger类型的单例
@@ -39,7 +39,8 @@ namespace LoongEgg.LoongLog
         /// <typeparam name="T">logger的类型</typeparam>
         /// <param name="level">logger的级别</param>
         /// <returns></returns>
-        public static LoggerBase EnsureCreat<T> (LoggerLevel level) where T : LoggerBase {
+        public static LoggerBase EnsureCreat<T>(LoggerLevel level) where T : LoggerBase
+        {
 
             string typeName = typeof(T).Name;
 
@@ -62,14 +63,15 @@ namespace LoongEgg.LoongLog
         /// 销毁指定类型的Logger
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public static void ClearLogger<T>() where T : LoggerBase {
+        public static void ClearLogger<T>() where T : LoggerBase
+        {
             if (Instances == null) return;
 
             string typeName = typeof(T).Name;
             if (Instances.Keys.Contains(typeName))
                 Instances.Remove(typeName);
         }
-         
+
         /// <summary>
         /// 将logger消息合并为一个字符串
         /// </summary>
@@ -77,38 +79,46 @@ namespace LoongEgg.LoongLog
         /// <param name="type"></param>
         /// <param name="callerPath"></param>
         /// <param name="callerLine"></param>
-        /// <param name="callerMethod"></param>
+        /// <param name="callerMethod"></param> 
         /// <returns></returns>
         public static string FormatMessage(
             string message,
             MessageType type,
             string callerPath,
             int callerLine,
-            string callerMethod) {
+            string callerMethod)
+        {
 
             StringBuilder msg = new StringBuilder();
             msg.Append(DateTime.Now.ToString() + " ");
             msg.Append($"[ {type.ToString()} ] -> ");
-
             msg.Append($"{Path.GetFileName(callerPath)} > {callerMethod}() > in line[{callerLine.ToString().PadLeft(3, ' ')}]: ");
 
             msg.Append(message);
             return msg.ToString();
         }
-         
+
+        /// <summary>
+        /// 精简打印模式
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static string FormatMessage(string message, MessageType type) => $"{DateTime.Now.ToString()} [ {type.ToString()} ] -> {message}";
+
         /// <summary>
         /// 简单打印一条消息
         /// </summary>
         /// <param name="message"></param>
         public abstract void WriteLine(string message);
-         
+
         /// <summary>
         /// 打印一条详细的消息
         /// </summary>
         /// <param name="message">消息的具体内容</param>
         /// <param name="type">消息类型</param>
         public abstract void WriteLine(
-            string message, 
+            string message,
             MessageType type);
 
     }

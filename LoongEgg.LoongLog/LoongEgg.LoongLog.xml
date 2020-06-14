@@ -99,17 +99,28 @@
                 <param name="level">logger的级别, 默认为<see cref="F:LoongEgg.LoongLog.LoggerLevel.Dbug"/></param>
                 <param name="fileName">[建议不要设置]fileLogger的文件名称</param>
         </member>
-        <member name="M:LoongEgg.LoongLog.Logger.EnableAll(LoongEgg.LoongLog.LoggerLevel)">
+        <member name="M:LoongEgg.LoongLog.Logger.Enable(LoongEgg.LoongLog.Loggers,System.Boolean,LoongEgg.LoongLog.LoggerLevel,System.String)">
+            <summary>
+            激活各种logger, 可以使用'|'位或运算
+            </summary>
+                <param name="type">待激活的各种logger标志</param>
+                <param name="level">logger的级别, 默认为<see cref="F:LoongEgg.LoongLog.LoggerLevel.Dbug"/></param>
+                <param name="fileName">[建议不要设置]fileLogger的文件名称</param>
+                <param name="isDetailMode">详细模式？</param>
+        </member>
+        <member name="M:LoongEgg.LoongLog.Logger.EnableAll(LoongEgg.LoongLog.LoggerLevel,System.Boolean)">
             <summary>
             激活所有logger
             </summary>
             <param name="level"><see cref="T:LoongEgg.LoongLog.LoggerLevel"/></param> 
+            <param name="isDetailMode">详细模式？</param>
         </member>
-        <member name="M:LoongEgg.LoongLog.Logger.EnableDebugLogger(LoongEgg.LoongLog.LoggerLevel)">
+        <member name="M:LoongEgg.LoongLog.Logger.EnableDebugLogger(LoongEgg.LoongLog.LoggerLevel,System.Boolean)">
             <summary>
             激活Debug时的Logger
             </summary>
             <param name="level">记录的最低级别</param>
+            <param name="isDetailMode">详细模式？</param>
         </member>
         <member name="M:LoongEgg.LoongLog.Logger.Disable">
             <summary>
@@ -259,7 +270,15 @@
             <param name="type"></param>
             <param name="callerPath"></param>
             <param name="callerLine"></param>
-            <param name="callerMethod"></param>
+            <param name="callerMethod"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:LoongEgg.LoongLog.LoggerBase.FormatMessage(System.String,LoongEgg.LoongLog.MessageType)">
+            <summary>
+            精简打印模式
+            </summary>
+            <param name="message"></param>
+            <param name="type"></param>
             <returns></returns>
         </member>
         <member name="M:LoongEgg.LoongLog.LoggerBase.WriteLine(System.String)">

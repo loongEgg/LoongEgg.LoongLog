@@ -2,13 +2,15 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <Copyright>Copyright (c) 2020 loongEgg</Copyright>
     <PackageLicenseUrl>https://github.com/loongEgg/LoongEgg.LoongLog/blob/master/LICENSE</PackageLicenseUrl>
     <Description>一个简单实用的Logger工具，欢迎体验！最低支持.Net4.5和.NetCore2.0</Description>
     <PackageProjectUrl>https://github.com/loongEgg/LoongEgg.LoongLog/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/loongEgg/LoongEgg.LoongLog/</RepositoryUrl>
-    <PackageReleaseNotes>Cross platform and cross framework now</PackageReleaseNotes>
+    <PackageReleaseNotes>由于路径在ubuntu中坑爹，加入了精简模式</PackageReleaseNotes>
+    <Authors>LoongEgg</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

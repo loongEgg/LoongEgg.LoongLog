@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LoongEgg.LoongLog" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LoongEgg.LoongLog\LoongEgg.LoongLog.csproj" />
   </ItemGroup>
 
